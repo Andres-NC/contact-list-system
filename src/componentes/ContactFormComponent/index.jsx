@@ -73,6 +73,7 @@ const ContactFormComponent = () => {
     <ContactFormContainer>
       <h1>Contact form</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <label>First name</label>
         <Input
           type="text"
           placeholder="First name"
@@ -81,6 +82,7 @@ const ContactFormComponent = () => {
           defaultValue={contact ? contact.firstName : ''}
           marginBottom="0"
         />
+        <label>Last name</label>
         <Input
           type="text"
           placeholder="Last name"
@@ -89,6 +91,7 @@ const ContactFormComponent = () => {
           defaultValue={contact ? contact.lastName : ''}
           marginBottom="0"
         />
+        <label>Email</label>
         <Input
           type="text"
           placeholder="Email"
@@ -97,6 +100,7 @@ const ContactFormComponent = () => {
           defaultValue={contact ? contact.email : ''}
           marginBottom="0"
         />
+        <label>Contact number</label>
         <Input
           type="text"
           placeholder="Contact number"

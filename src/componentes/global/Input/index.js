@@ -39,38 +39,10 @@ const Input = React.forwardRef(function InputWithRef(props, ref) {
         isSearch={isSearch}
         type={isPass ? (viewPass ? 'text' : 'password') : type}
       />
-      {/* {isPass && (
-        <>
-          <PassIconWrapper onClick={togglePass} visible={viewPass}>
-            <FontAwesomeIcon icon={faEyeSlash} />
-          </PassIconWrapper>
-          <PassIconWrapper onClick={togglePass} visible={!viewPass}>
-            <FontAwesomeIcon icon={faEye} />
-          </PassIconWrapper>
-        </>
-      )}
-      {isSearch && (
-        <SearchIconWrapper onClick={handleSearchClick}>
-          <FontAwesomeIcon icon={faSearch} />
-        </SearchIconWrapper>
-      )} */}
+
       {message && <InputMessage>{message}</InputMessage>}
     </InputWrapper>
   );
 });
-
-Input.propTypes = {
-  type: string.isRequired,
-  positionWrapper: string,
-  defaultValue: string,
-  message: string,
-  responseMessage: string,
-  marginBottom: string,
-  placeholder: string,
-  isPass: string,
-  fullwidth: bool,
-  error: bool,
-  handleSearchClick: func,
-};
 
 export default Input;

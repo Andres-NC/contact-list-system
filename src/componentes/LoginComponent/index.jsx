@@ -42,6 +42,7 @@ const Login = () => {
         <LoginWrapper>
           <h2>Login</h2>
           <LoginForm onSubmit={handleSubmit}>
+            <label>Email</label>
             <input
               name="email"
               className="input"
@@ -49,6 +50,7 @@ const Login = () => {
               placeholder="Correo"
               onChange={updateInput}
             />
+            <label>Password</label>
             <input
               name="password"
               className="input"

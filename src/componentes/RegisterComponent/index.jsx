@@ -46,6 +46,7 @@ const Register = () => {
         <RegisterWrapper>
           <h2>Sign up</h2>
           <LoginForm className="register__container--form" onSubmit={handleSubmit}>
+            <label>Name</label>
             <input
               name="name"
               className="input"
@@ -53,6 +54,7 @@ const Register = () => {
               placeholder="Nombre"
               onChange={updateInput}
             />
+            <label>Email</label>
             <input
               name="email"
               className="input"
@@ -60,6 +62,7 @@ const Register = () => {
               placeholder="Correo"
               onChange={updateInput}
             />
+            <label>Password</label>
             <input
               name="password"
               className="input"
