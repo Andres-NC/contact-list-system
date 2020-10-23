@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Table} from 'react-bootstrap';
 
-const ListContacts = () => {
+const ListContacts = ({listContacts, handleDelete}) => {
   return (
     <Table striped bordered hover responsive>
       <thead>
@@ -15,36 +16,21 @@ const ListContacts = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>mark@correo.com</td>
-          <td>5522172561</td>
-          <td>
-            <button>Update</button> <button>Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>jacob@correo.com</td>
-          <td>5522172561</td>
-          <td>
-            <button>Update</button> <button>Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry</td>
-          <td>Thornton</td>
-          <td>larry@correo.com</td>
-          <td>5522172561</td>
-          <td>
-            <button>Update</button> <button>Delete</button>
-          </td>
-        </tr>
+        {listContacts.map((contact, index) => (
+          <tr key={contact.id}>
+            <td>{index + 1}</td>
+            <td>{contact.firstname}</td>
+            <td>{contact.lastname}</td>
+            <td>{contact.email}</td>
+            <td>{contact.contactnumber}</td>
+            <td>
+              <Link to={`/contact-form/${contact.id}`}>
+                <button>Update</button>
+              </Link>
+              <button onClick={() => handleDelete(contact.id)}>Delete</button>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );
